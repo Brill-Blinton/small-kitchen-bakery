@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Kitchen Bakery — Bakery · Beaver Falls, PA</title>
+<meta name="description" content="Small Kitchen Bakery — Bakery at 3216 5th Ave, Beaver Falls, PA 15010. Call (724) 581-4454.">
+<style>
+  :root{--bone:#FAF9F6; --ink:#23272B; --steel:#67707A; --accent:#B0621A; --band:#23272B;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{background:var(--bone); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.6; padding-bottom:76px;}
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
+  header{background:var(--band); color:#fff;}
+  .hazard{height:14px; background:repeating-linear-gradient(45deg, var(--accent) 0 16px, var(--band) 16px 32px);}
+  header .wrap{padding-top:34px; padding-bottom:30px;}
+  h1{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-size:clamp(38px, 9vw, 56px); font-weight:700; letter-spacing:.02em; text-transform:uppercase; line-height:1.02;}
+  h1 span{color:var(--accent);}
+  .tagline{margin-top:10px; color:#C9CFD6; font-size:15px;}
+  .stars{display:inline-block; margin-top:16px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); padding:6px 12px; font-size:13.5px;}
+  .stars b{color:var(--accent);}
+  section{padding:30px 0 6px;}
+  h2{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-size:15px; letter-spacing:.18em; text-transform:uppercase; color:var(--steel); margin-bottom:14px;}
+  .services{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .svc{border:1.5px solid #E3E1DA; background:#fff; padding:14px; font-weight:600; font-size:15px; display:flex; align-items:center; gap:10px;}
+  .svc::before{content:""; width:10px; height:10px; background:var(--accent); flex:0 0 auto;}
+  .hours{border:1.5px solid #E3E1DA; background:#fff;}
+  .hours .row{display:flex; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #EEECE6; font-size:15px;}
+  .hours .row:last-child{border-bottom:0;}
+  .hours .row span:last-child{font-weight:700;}
+  .hours .closed span:last-child{color:#A4442E;}
+  .addr{font-size:16.5px; font-weight:600; margin-bottom:6px;}
+  .addr + p{color:var(--steel); font-size:14.5px; margin-bottom:14px;}
+  .maplink{display:inline-block; color:var(--ink); font-weight:700; text-decoration:none; border-bottom:3px solid var(--accent); padding-bottom:2px; font-size:15px;}
+  .badge{display:inline-block; margin-top:12px; padding:7px 14px; border-radius:999px; font-weight:800; font-size:14px; letter-spacing:.04em; border:2px solid transparent;}
+  .badge.open{background:#1E6B3A; color:#fff;}
+  .badge.closed{background:transparent; color:#C9CFD6; border-color:#4A525A;}
+  .badge-sub{display:block; margin-top:6px; font-size:13px; color:#C9CFD6;}
+  .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+  .actions a, .actions button{flex:1 1 140px; text-align:center; padding:12px 10px; font-size:14.5px; font-weight:700; border-radius:8px; text-decoration:none; cursor:pointer; font-family:inherit;}
+  .actions .a-share{background:var(--accent); color:var(--band); border:0;}
+  .actions .a-vcf{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.4);}
+  .qa details{border:1.5px solid #E3E1DA; background:#fff; margin-bottom:8px;}
+  .qa summary{padding:13px 16px; font-weight:700; font-size:15px; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  .qa summary::after{content:"+"; color:var(--steel); font-size:20px; font-weight:400;}
+  .qa details[open] summary::after{content:"–";}
+  .qa details p{padding:0 16px 14px; font-size:14.5px; color:var(--ink);}
+  .qa details p a{color:var(--ink); font-weight:700;}
+  .callbar{position:fixed; left:0; right:0; bottom:0; background:var(--band); padding:12px 16px calc(12px + env(safe-area-inset-bottom));}
+  .callbar a{display:block; max-width:680px; margin:0 auto; text-align:center; background:var(--accent); color:var(--band); font-weight:800; font-size:16px; padding:14px; border-radius:10px; text-decoration:none;}
+  footer{color:var(--steel); font-size:13px; padding:26px 0 10px;}
+</style>
+</head>
+<body>
+  <header>
+    <div class="hazard"></div>
+    <div class="wrap">
+      <h1>Small Kitchen <span>Bakery</span></h1>
+      <p class="tagline">Bakery · Beaver Falls</p>
+      <div class="stars"><b>5.0 ★</b> on Google</div>
+      <div><span id="badge" class="badge closed">Checking hours…</span><span id="badgeSub" class="badge-sub"></span></div>
+      <div class="actions">
+        <button id="shareBtn" class="a-share" type="button">Send to a friend</button>
+        <a class="a-vcf" href="small-kitchen-bakery.vcf">Save to contacts</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section><h2>Hours</h2><div class="hours"><div class="row"><span>Hours vary</span><span>Call the shop</span></div></div></section>
+    <section>
+      <h2>What we do</h2>
+      <div class="services"><div class="svc">Bakery</div></div>
+    </section>
+    <section class="qa">
+      <h2>Quick answers</h2><details><summary>What are your hours?</summary><p>Hours are not posted online — call the shop to confirm: <a href="tel:+17245814454">(724) 581-4454</a>.</p></details><details><summary>Where are you located?</summary><p>3216 5th Ave, Beaver Falls, PA 15010 — tap “Get directions” below and your maps app takes you there.</p></details><details><summary>Do I need an appointment?</summary><p>Call the shop to check same-day availability: <a href="tel:+17245814454">(724) 581-4454</a>.</p></details>
+    </section>
+    <section>
+      <h2>Find us</h2>
+      <p class="addr">3216 5th Ave, Beaver Falls, PA 15010</p>
+      <p>Questions before you come in? Call the shop — a person answers during business hours.</p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=3216+5th+Ave,+Beaver+Falls,+PA+15010" target="_blank" rel="noopener">Get directions on Google Maps &rarr;</a>
+    </section>
+    <footer>Small Kitchen Bakery · Beaver Falls, PA · (724) 581-4454</footer>
+  </main>
+
+  <div class="callbar"><a href="tel:+17245814454">Call the shop — (724) 581-4454</a></div>
+
+<script>
+(function(){
+  var HOURS = null;
+  var DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  var badge = document.getElementById('badge');
+  var sub = document.getElementById('badgeSub');
+  function mins(t){ var p=t.split(':'); return (+p[0])*60 + (+p[1]); }
+  function updateBadge(){
+    if(HOURS === null){ badge.textContent='Hours vary'; sub.textContent='Call the shop — (724) 581-4454'; return; }
+    try{
+      var parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+      var get=function(t){ for(var i=0;i<parts.length;i++){ if(parts[i].type===t) return parts[i].value; } return ''; };
+      var wd=get('weekday'); var idx=DAYS.indexOf(wd); if(idx<0) idx=0;
+      var now=(parseInt(get('hour'),10)||0)*60 + (parseInt(get('minute'),10)||0);
+      var ranges=(HOURS[idx]||[]).map(function(r){ return [mins(r[0]), mins(r[1])]; });
+      var openRange=null;
+      for(var i=0;i<ranges.length;i++){ if(now>=ranges[i][0] && now<ranges[i][1]) openRange=ranges[i]; }
+      if(openRange){ badge.textContent='Open now'; badge.className='badge open';
+        var later=ranges.filter(function(r){ return r[0]>now; });
+        sub.textContent = later.length ? 'Closes ' + fmt(openRange[1]) + ' today (next break ' + fmt(later[0][0]) + ')' : 'Closes ' + fmt(openRange[1]) + ' today';
+        return; }
+      badge.textContent='Closed'; badge.className='badge closed';
+      for(var d=0; d<8; d++){ var k=(idx+d)%7; var rs=(HOURS[k]||[]);
+        for(var i2=0;i2<rs.length;i2++){ var start=mins(rs[i2][0]);
+          if(d>0 || start>now){ sub.textContent='Opens ' + DAYS[k] + ' ' + fmt(rs[i2][0]); return; } } }
+      sub.textContent='';
+    }catch(e){ badge.textContent='Call for hours'; sub.textContent=''; }
+  }
+  function fmt(m){ var h=Math.floor(m/60), mm=m%60, ap=h<12?'AM':'PM', hh=h%12||12; return hh+':'+(mm<10?'0':'')+mm+' '+ap; }
+  updateBadge();
+
+  var shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', function(){
+    var data={title:"Small Kitchen Bakery", text:"Bakery in Beaver Falls, PA \u2014 (724) 581-4454", url:location.href};
+    if(navigator.share){ navigator.share(data).catch(function(){}); }
+    else if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(location.href).then(function(){ shareBtn.textContent='Link copied \u2713'; setTimeout(function(){ shareBtn.textContent='Send to a friend'; },2000); }).catch(function(){});
+    }
+  });
+})();
+</script>
+</body>
+</html>
